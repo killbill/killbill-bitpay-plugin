@@ -6,10 +6,13 @@ module Killbill #:nodoc:
 
       has_one :bitpay_transaction
 
-      def self.from_response(api_call, kb_account_id, kb_payment_id, kb_tenant_id, response, extra_params = {})
+      def self.from_response(api_call, kb_account_id, kb_payment_id, kb_payment_transaction_id, transaction_type, payment_processor_account_id, kb_tenant_id, response, extra_params = {}, model = ::Killbill::Bitpay::BitpayResponse)
         super(api_call,
               kb_account_id,
               kb_payment_id,
+              kb_payment_transaction_id,
+              transaction_type,
+              payment_processor_account_id,
               kb_tenant_id,
               response,
               {
@@ -17,7 +20,7 @@ module Killbill #:nodoc:
                   #:params_id => extract(response, 'id'),
                   #:params_card_id => extract(response, 'card', 'id')
               }.merge!(extra_params),
-              ::Killbill::Bitpay::BitpayResponse)
+              model)
       end
     end
   end

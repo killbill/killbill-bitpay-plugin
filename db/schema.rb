@@ -7,15 +7,15 @@ ActiveRecord::Schema.define(:version => 20140410153635) do
     t.string   "cc_first_name"
     t.string   "cc_last_name"
     t.string   "cc_type"
-    t.integer  "cc_exp_month"
-    t.integer  "cc_exp_year"
-    t.integer  "cc_number"
-    t.integer  "cc_last_4"
-    t.integer  "cc_start_month"
-    t.integer  "cc_start_year"
-    t.integer  "cc_issue_number"
-    t.integer  "cc_verification_value"
-    t.integer  "cc_track_data"
+    t.string   "cc_exp_month"
+    t.string   "cc_exp_year"
+    t.string   "cc_number"
+    t.string   "cc_last_4"
+    t.string   "cc_start_month"
+    t.string   "cc_start_year"
+    t.string   "cc_issue_number"
+    t.string   "cc_verification_value"
+    t.string   "cc_track_data"
     t.string   "address1"
     t.string   "address2"
     t.string   "city"
@@ -36,9 +36,13 @@ ActiveRecord::Schema.define(:version => 20140410153635) do
     t.integer  "bitpay_response_id",  :null => false
     t.string   "api_call",                       :null => false
     t.string   "kb_payment_id",                  :null => false
+    t.string   "kb_payment_transaction_id",      :null => false
+    t.string   "transaction_type",               :null => false
+    t.string   "payment_processor_account_id"
     t.string   "txn_id"                          # bitpay transaction id
-    t.integer  "amount_in_cents",                :null => false
-    t.string   "currency",                       :null => false
+    # Both null for void
+    t.integer  "amount_in_cents"
+    t.string   "currency"
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.string   "kb_account_id",                  :null => false
@@ -50,6 +54,9 @@ ActiveRecord::Schema.define(:version => 20140410153635) do
   create_table "bitpay_responses", :force => true do |t|
     t.string   "api_call",          :null => false
     t.string   "kb_payment_id"
+    t.string   "kb_payment_transaction_id"
+    t.string   "transaction_type"
+    t.string   "payment_processor_account_id"
     t.string   "message"
     t.string   "authorization"
     t.boolean  "fraud_review"

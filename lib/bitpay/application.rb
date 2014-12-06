@@ -18,11 +18,7 @@ end
 
 helpers do
   def plugin(session = {})
-    ::Killbill::Bitpay::PrivatePaymentPlugin.new(:bitpay,
-                                                            ::Killbill::Bitpay::BitpayPaymentMethod,
-                                                            ::Killbill::Bitpay::BitpayTransaction,
-                                                            ::Killbill::Bitpay::BitpayResponse,
-                                                            session)
+    ::Killbill::Bitpay::PrivatePaymentPlugin.new(session)
   end
 end
 
