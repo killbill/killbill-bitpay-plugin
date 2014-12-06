@@ -87,7 +87,7 @@ curl -v \
 
 Notes:
 
-* Replace *<INVOICE_ID>* with the actual BitPay invoice id
+* Replace *INVOICE_ID* with the actual BitPay invoice id
 * If *status* is *complete*, a successful payment will be recorded
 * If *status* is *invalid*, a failed payment will be recorded
 * Otherwise, no payment is recorded (either the user didn't pay, or it is not yet confirmed)
