@@ -32,7 +32,7 @@ curl -v \
 
 Notes:
 * Make sure to replace *ACCOUNT_ID* with the id of the Kill Bill account
-* `skip_gw=true` is specified because BitPay doesn't require any information to trigger payments
+* `skip_gw=true` is required because BitPay doesn't store any information to trigger payments
 
 To generate a BitPay invoice:
 
