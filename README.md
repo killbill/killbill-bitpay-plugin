@@ -5,6 +5,13 @@ Plugin to use [BitPay](http://www.bitpay.com/) as a gateway.
 
 Release builds are available on [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.kill-bill.billing.plugin.ruby%22%20AND%20a%3A%22bitpay-plugin%22) with coordinates `org.kill-bill.billing.plugin.ruby:bitpay-plugin`.
 
+Kill Bill compatibility
+-----------------------
+
+| Plugin version | Kill Bill version |
+| -------------: | ----------------: |
+| 0.0.y          | 0.14.z            |
+
 Requirements
 ------------
 
